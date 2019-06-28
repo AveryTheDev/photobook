@@ -1,0 +1,36 @@
+.input-group {
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+}
+
+.input-group-prepend {
+    height: 3.5rem;
+}
+
+.searchBar {
+    width: 70%;
+    padding: 1rem;
+    border: 1px solid rgb(250, 250, 250);
+    background-color: rgb(250, 250, 250);
+    border-radius: 0 .25rem .25rem 0;
+    font-size: .9rem;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid white;
+    background-color: white;
+}
+
+.fa-search {
+    color: rgb(182, 179, 179);
+}
+
+.btn-search {
+    background-color: rgb(250, 250, 250);
+    height: 3.5rem;
+}
+
+.btn-search:hover {
+    background-color: white; 
+}
