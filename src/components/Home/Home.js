@@ -1,7 +1,8 @@
 import './Home.css';
 import React from 'react';
 import Nav from '../Nav/Nav';
-import Results from '../Results/Results';
+import FeaturedPhoto from '../Home/FeaturedPhoto/FeaturedPhoto';
+
 
 class Home extends React.Component {
 
@@ -9,7 +10,7 @@ class Home extends React.Component {
         return (
             <div>
                 <Nav/>
-                <Results />
+                <FeaturedPhoto />
             </div>
         )
     }
