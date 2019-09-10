@@ -14,10 +14,6 @@ const Modal = ( ) => {
             <img src={selected.image} alt={selected.description} />
             <p>{selected.description}</p>
             <a href={selected.downloadURL}> Download </a>
-            <img
-              src={selected.photographerPortrait}
-              alt={selected.photographer}
-            />
             <p>Photographer {selected.photographer}</p>
             <a href={selected.portfolioURL}>
               View {selected.photographer}'s Portfolio

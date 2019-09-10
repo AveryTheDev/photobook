@@ -9,7 +9,6 @@ const PhotoContextProvider = props => {
     image: '',
     description: '',
     downloadURL: '',
-    photographerPortrait: '',
     photographer: '',
     portfolioURL: ''
   });
@@ -18,13 +17,11 @@ const PhotoContextProvider = props => {
     const response = await unsplash.get("/search/photos", {
       params: { query: term, per_page: 50 }
     });
-
-    //instead of grabbing just the image, grab everything and then 
-    //pass the image information in a manner such that only what 
-    //data you want to be displayed is displayed
-    console.log(response.data.results);
+    
     setImages(response.data.results);
   };
+
+
 
   return (
     <div>
