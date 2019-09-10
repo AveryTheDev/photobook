@@ -1,45 +1,63 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, { Component } from 'react';
 import { PhotoContext } from '../../context/PhotoContext';
 
-const ImageCard = ({ image, description }) => {
+class ImageCard extends Component {
+    state={spans: 0}
 
-    const { setSelected } = useContext(PhotoContext);
-    const [ spans, setSpans ] = useState(0);
-
-    const imageRef = useRef();
-
-    useEffect(() => {
-        imageRef.current.addEventListener('load', setImageSpans);
-    }, [])
-
-    const setImageSpans = () => {
-        const height = imageRef.current.clientHeight;
-
-        const imgSpans = Math.ceil(height / 40 + 1);
-        setSpans(imgSpans);
+    componentDidMount() {
+        this.imageRef.current.addEventListener('load', this.setSpans);
     }
 
-    const imageSelect = () => {
-        setSelected({
-          image: image.urls.regular,
-          description: description,
-          downloadURL: image.links.download,
-          photographerPortrait: image.user.profile_image,
-          photographer: `${image.user.first_name} ${image.user.last_name}`,
-          portfolioURL: image.user.portfolio_url
+    setSpans = () => {
+
+        const height = this.imageRef.current.clientHeight;
+        const spans = Math.ceil(height / 40 + 1);
+        this.setState({ spans: spans });
+    }
+
+        static contextType = PhotoContext;
+
+    imageSelect = () => {
+
+    let last_name = this.props.image.user.last_name;
+
+        const setLastName = () => {
+            if(last_name) {
+                return;
+            }
+            last_name = '';
+        }
+
+            setLastName();
+
+    this.context.setSelected({
+          image: this.props.image.urls.regular,
+          description: this.props.description,
+          downloadURL: this.props.image.links.download,
+          photographer: `${this.props.image.user.first_name} ${last_name}`,
+          portfolioURL: this.props.image.user.portfolio_url
         });
     }
 
-    return (
-        <div style={{ gridRowEnd: `span ${spans}` }}>
-            <img 
-                ref={imageRef} 
-                alt={description} 
-                src={image.urls.regular}
-                onClick={imageSelect}
-                />
-        </div>
-    );
+    render() { 
+
+    this.imageRef = React.createRef();
+
+    const { image, description } = this.props;
+
+
+        return (
+          <div style={{ gridRowEnd: `span ${this.state.spans}` }}>
+            <img
+              ref={this.imageRef}
+              alt={description}
+              src={image.urls.regular}
+              onClick={this.imageSelect}
+            />
+          </div>
+        );
+    }
 }
  
 export default ImageCard;
+
