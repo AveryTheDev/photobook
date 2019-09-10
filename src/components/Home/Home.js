@@ -1,18 +1,22 @@
 import './Home.css';
 import React from 'react';
 import Nav from '../Nav/Nav';
-import FeaturedPhoto from '../Home/FeaturedPhoto/FeaturedPhoto';
+import PhotoSearch from './PhotoSearch/PhotoSearch';
+import Modal from '../Modal/Modal';
+import PhotoContextProvider from '../../context/PhotoContext';
 
 
 class Home extends React.Component {
 
     render() {
+
         return (
-            <div>
-                <Nav/>
-                <FeaturedPhoto />
-            </div>
-        )
+          <PhotoContextProvider>
+            <Nav />
+            <PhotoSearch />
+            <Modal />
+          </PhotoContextProvider>
+        );
     }
 }
 
