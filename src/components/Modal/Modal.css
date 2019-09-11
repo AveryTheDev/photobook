@@ -9,11 +9,12 @@
 }
 
 .modal-content {
-    background-color: #0b1616b6;
+    background-color: #161818f5;
     display: flex;
     align-items: center;
+    padding-top: 3rem;
     margin: 0 auto;
-    width: 75%
+    width: 50%
 }
 
 .centered-image {
