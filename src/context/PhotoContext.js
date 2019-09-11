@@ -7,7 +7,6 @@ const PhotoContextProvider = props => {
   const [images, setImages] = useState([]);
   const [selected, setSelected] = useState({
     image: '',
-    description: '',
     downloadURL: '',
     photographer: '',
     portfolioURL: ''

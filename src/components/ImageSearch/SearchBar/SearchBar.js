@@ -24,7 +24,7 @@ const SearchBar = () => {
     }
 
     return ( 
-        <div>
+        <div className="searchBarDiv">
             <form onSubmit={onFormSubmit} >
                 <InputGroup variant="searchBar">
                     <InputGroup.Prepend>

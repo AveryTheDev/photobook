@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './Modal.css';
 import { PhotoContext } from '../../context/PhotoContext';
 
 
@@ -10,25 +11,30 @@ const Modal = ( ) => {
 
     if(selected.image) {
         return (
-          <div>
-            <h1
-              onClick={() => setSelected({
-                image: "",
-                description: "",
-                downloadURL: "",
-                photographer: "",
-                portfolioURL: ""
-              })}
+          <div className="image-modal">
+            <p
+              onClick={() =>
+                setSelected({
+                  image: "",
+                  downloadURL: "",
+                  photographer: "",
+                  portfolioURL: ""
+                })
+              }
             >
               X
-            </h1>
-            <img src={selected.image} alt={selected.description} />
-            <p>{selected.description}</p>
-            <a href={selected.downloadURL}> Download </a>
-            <p>Photographer {selected.photographer}</p>
-            <a href={selected.portfolioURL}>
-              View {selected.photographer}'s Portfolio
-            </a>
+            </p>
+            <div className="modal-content">
+              <div className="centered-image">
+                <img src={selected.image} alt={selected.description} />
+              </div>
+              <div className="more-info">
+                <a href={selected.portfolioURL}>
+                  Photographer: {selected.photographer}
+                </a>
+                <a href={selected.downloadURL}> Download Image</a>
+              </div>
+            </div>
           </div>
         );
     }

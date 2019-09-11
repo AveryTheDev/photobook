@@ -20,17 +20,31 @@ useLayoutEffect(() => {
 }, [imageRef.current]);
 
   const imageSelect = () => {
+    debugger;
+    let last_name = image.user.last_name;
+
+    if(last_name) {
+      return setSelected({
+        image: image.urls.regular,
+        downloadURL: image.links.download,
+        photographer: `${image.user.first_name} ${last_name}`,
+        portfolioURL: image.user.portfolio_url
+      });;
+    }
+    else {
+      last_name = '';
+    }
+
     setSelected({
       image: image.urls.regular,
-      description: description,
       downloadURL: image.links.download,
-      photographer: `${image.user.first_name} ${image.user.last_name}`,
+      photographer: `${image.user.first_name} ${last_name}`,
       portfolioURL: image.user.portfolio_url
     });
   };
 
   return (
-    <div style={{ gridRowEnd: `span ${spans}` }}>
+    <div style={{ gridRowEnd: `span ${spans}`}} >
       <img
         ref={imageRef}
         alt={description}

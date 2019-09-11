@@ -32,3 +32,25 @@
     padding: .5rem;
     background-color: rgba(0, 0, 0, 0.445);
 }
+
+@media (min-width: 426px) and (max-width: 769px) {
+    .photoContainer {
+        height: auto;
+        margin-bottom: 3rem;
+    }
+    
+    .highlightPhoto {
+        height: 25rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .photoContainer {
+        height: auto;
+        margin-bottom: 3rem;
+    }
+
+    .highlightPhoto {
+        height: 20rem;
+    }
+}
