@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { PhotoContext } from '../../context/PhotoContext';
 
 
@@ -8,9 +8,20 @@ const Modal = ( ) => {
     const { setSelected } = useContext(PhotoContext);
 
 
-    if(selected) {
+    if(selected.image) {
         return (
-          <div >
+          <div>
+            <h1
+              onClick={() => setSelected({
+                image: "",
+                description: "",
+                downloadURL: "",
+                photographer: "",
+                portfolioURL: ""
+              })}
+            >
+              X
+            </h1>
             <img src={selected.image} alt={selected.description} />
             <p>{selected.description}</p>
             <a href={selected.downloadURL}> Download </a>
@@ -21,9 +32,11 @@ const Modal = ( ) => {
           </div>
         );
     }
-    return(
-        <div></div>
-    );
+    else {
+        return(
+            <div></div>
+        );
+      }
 } 
  
 export default Modal;
