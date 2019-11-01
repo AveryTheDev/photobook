@@ -8,3 +8,16 @@
 .image-list img {
     width: 250px;
 }
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .image-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-list img {
+        width: 50%;
+        height: auto;
+        margin: 2rem 25%;
+    }
+}
