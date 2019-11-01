@@ -9,11 +9,11 @@ import ImageList from '../../ImageSearch/ImageList';
 
 
 class FeaturedPhoto extends React.Component {
-    state = { images: [], }
+    state = { images: [] }
 
     onSearchSubmit = async (term) => {
         const response = await unsplash.get('/search/photos', {
-            params: { query: term },
+            params: { query: term, per_page: 50 },
         });
 
         this.setState({ images: response.data.results });

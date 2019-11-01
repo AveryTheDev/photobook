@@ -1,0 +1,10 @@
+.nav {
+    align-items: center;
+    margin: 2rem 0 3rem 2rem;
+}
+
+.fa-camera-retro {
+    font-size: 3rem;
+    margin: 0 .75rem .5rem .5rem;
+    color: #73eebf;
+}

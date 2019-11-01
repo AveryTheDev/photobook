@@ -1,0 +1,49 @@
+.image-modal {
+    background-color: #0b1616b6;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.modal-content {
+    background-color: #161818f5;
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+    margin: 0 auto;
+    width: 50%
+}
+
+.centered-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.more-info {
+   display: flex;
+   flex-direction: column;
+   margin: 2rem 0;
+}
+
+.image-modal > p, .more-info > * {
+    color: white;
+}
+
+.image-modal > p {
+    text-align: right;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+}
+
+.centered-image > img {
+    max-height: 24rem;
+    max-width: 90%;
+}
+
+
+
