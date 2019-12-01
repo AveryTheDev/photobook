@@ -1,4 +1,3 @@
-import "./FeaturedPhoto.css";
 import unsplash from "../../../api/unsplash";
 import React from "react";
 import Image from "react-bootstrap/Image";
